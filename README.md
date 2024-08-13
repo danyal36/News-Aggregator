@@ -1,70 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# News Aggregator
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+The News Aggregator is a user interface for a website that collects and displays articles from various sources. The application presents the news in a clean, easy-to-read format, providing users with the latest updates from multiple outlets.
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you begin, ensure you have the following installed on your system:
 
-### `npm test`
+- **Node.js** (v14 or later)
+- **Docker** (v20 or later)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+Follow these steps to set up and run the application:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   Start by cloning the repository to your local machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone git@github.com:danyal36/News-Aggregator.git
+   cd News-Aggregator
+   ```
 
-### `npm run eject`
+2. **Build the Docker Image:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Build the Docker image for the application using the following command:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   docker build -t my-news-aggregator .
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Run the Docker Container:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   After building the image, run the Docker container:
 
-## Learn More
+   ```bash
+   docker run -p 3000:3000 my-news-aggregator
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   This command will map port `3000` on your local machine to the container's port `3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Access the Application:**
 
-### Code Splitting
+   Open your web browser and navigate to the following URL to view the application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```
+   http://localhost:3000
+   ```
 
-### Analyzing the Bundle Size
+5. **Stopping the Container:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   To stop the running container, you can either press `Ctrl+C` in the terminal or use the following commands:
 
-### Making a Progressive Web App
+   ```bash
+   docker ps  # To list running containers and get the container ID
+   docker stop <container-id>
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Additional Information
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For troubleshooting and further details on the project, please refer to the documentation or the project’s wiki.
